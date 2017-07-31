@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.Api", "Base.Api\Base.Api.csproj", "{CDA63D8A-C857-449C-9CD1-C56F24273135}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.DataModel", "Base.DataModel\Base.DataModel.csproj", "{A4744CE8-01BD-47E3-9EA7-7801A0A31EFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.Resolver", "Base.Resolver\Base.Resolver.csproj", "{035C75EA-79C3-4FC1-91B5-1A0B5C409FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.Services", "Base.Services\Base.Services.csproj", "{CC57DE95-2111-4875-AC51-C08B3EEC12AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDA63D8A-C857-449C-9CD1-C56F24273135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA63D8A-C857-449C-9CD1-C56F24273135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA63D8A-C857-449C-9CD1-C56F24273135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA63D8A-C857-449C-9CD1-C56F24273135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4744CE8-01BD-47E3-9EA7-7801A0A31EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4744CE8-01BD-47E3-9EA7-7801A0A31EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4744CE8-01BD-47E3-9EA7-7801A0A31EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4744CE8-01BD-47E3-9EA7-7801A0A31EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{035C75EA-79C3-4FC1-91B5-1A0B5C409FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{035C75EA-79C3-4FC1-91B5-1A0B5C409FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{035C75EA-79C3-4FC1-91B5-1A0B5C409FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{035C75EA-79C3-4FC1-91B5-1A0B5C409FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC57DE95-2111-4875-AC51-C08B3EEC12AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC57DE95-2111-4875-AC51-C08B3EEC12AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC57DE95-2111-4875-AC51-C08B3EEC12AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC57DE95-2111-4875-AC51-C08B3EEC12AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://paines.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Base.Api\\Base.Api.csproj
+		SccProjectName1 = Base.Api
+		SccLocalPath1 = Base.Api
+		SccProjectUniqueName2 = Base.DataModel\\Base.DataModel.csproj
+		SccProjectName2 = Base.DataModel
+		SccLocalPath2 = Base.DataModel
+		SccProjectUniqueName3 = Base.Resolver\\Base.Resolver.csproj
+		SccProjectName3 = Base.Resolver
+		SccLocalPath3 = Base.Resolver
+		SccProjectUniqueName4 = Base.Services\\Base.Services.csproj
+		SccProjectName4 = Base.Services
+		SccLocalPath4 = Base.Services
+	EndGlobalSection
+EndGlobal

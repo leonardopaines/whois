@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Pesquisa de Domínios";
+}
+<div class="domainArea">
+    <div class="container animated">
+        <div class="row secPdngB">
+            <div class="col-sm-12 text-center">
+                <img id="bender_deboas" src="~/Images/bender_deboas.gif" class="img-circle">
+                <img id="bender_dance" src="~/Images/bender_dance.gif" class="img-circle" style="display: none;">
+            </div>
+        </div>
+        <div class="row secPdngB">
+            <div class="col-md-offset-1 col-md-11 clearfix">
+                <form action="#" class="domainForm" method="get">
+                    <div class="domainTop">
+                        <input type="search" id="search" placeholder="Digite o domínio (exemplo: google.com, umbler.com, leonardo.poa.br)">
+                        <input type="submit" id="submit" value="Pesquisar">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row secPdngB">
+            <div class="col-md-offset-1 col-md-10 clearfix">
+                <table id="tableResult" data-toggle="table"
+                       data-detail-view="true"
+                       data-detail-formatter="detailFormatter"
+                       class="table bootstrap-table table-no-bordered">
+                    <thead>
+                        <tr>
+                            <th data-field="Dominio">Domínio</th>
+                            <th data-field="Hospedagem">Hospedagem</th>
+                            <th data-field="Ip">IP</th>
+                            <th data-field="Titular">Titular</th>
+                            <th data-field="Responsavel">Responsável</th>
+                            <th data-field="DataRegistro">Registrado Em</th>
+                            <th data-field="DataExpiracao">Expira Em</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        function detailFormatter(index, row) {
+            var html = [];
+            $.each(row, function (key, value) {
+                debugger;
+                html.push('<p><b>' + key + ':</b> ' + value + '</p>');
+            });
+            return html.join('');
+        }
+
+        var table = $('#tableResult'),
+        bender_dance = $('#bender_dance'),
+        bender_deboas = $('#bender_deboas'),
+        submit = $('#submit'),
+        search = $("#search");
+        
+
+        table.bootstrapTable({
+            formatNoMatches: function () {
+                return '<< VAZIO >>';
+            }
+        });
+
+        $("form").submit(function (e) {
+            e.preventDefault();
+
+            var pesquisaVM = {
+                DataExpiracao: "",
+                DataRegistro: "",
+                DetalhesStatus: "",
+                Dns: [],
+                Dominio: "",
+                Ip: "",
+                IpRequisicao: "",
+                Responsavel: "",
+                Status: 0,
+                Titular: "",
+                WhoIs: "",
+                Hospedagem: ""
+            }
+
+            var parms = {
+                initial: true,
+                showLoader: false,
+                url: '/api/pesquisa?dominio=' + $("#search").val(),
+                beforeSend: function () {
+                    bender_dance.show();
+                    bender_deboas.hide();
+
+                    search.prop('disabled', true);
+                    submit.prop('disabled', true);
+                    submit.val("Aguarde ...");
+                },
+                success: function (pesquisaVM) {
+                    switch (pesquisaVM.Status) {
+                        case 0: // ERRO
+                        default:
+                            JsHelpers.Alert.Error(pesquisaVM.DetalhesStatus);
+                            break;
+                        case 1: // ENCONTROU
+                            table.bootstrapTable('insertRow', {
+                                index: 0,
+                                row: pesquisaVM
+                            });
+                            search.val("");
+                            break;
+                        case 2: // DISPONIVEL
+                            JsHelpers.Alert.Success(pesquisaVM.DetalhesStatus);
+                            break;
+                    }
+                },
+                complete: function () {
+                    bender_deboas.show();
+                    bender_dance.hide();
+
+                    search.prop('disabled', false);
+                    submit.prop('disabled', false);
+                    submit.val("Pesquisar");                    
+                    submit.focus();
+                }
+            }
+
+            JsHelpers.Ajax.Get(parms);
+        });
+
+    </script>
+}
+

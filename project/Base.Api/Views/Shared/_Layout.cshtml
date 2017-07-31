@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="~/Images/gear.png" />
+    <title>WhoIs</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="home">
+
+    <!-- ======= 1.01 Header Area ====== -->
+    <header>
+        <div class="headerBottomArea">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-9">
+                        <a href="/" class="logo"><img src="~/Images/gear.png" alt="" data-pagespeed-url-hash="127336771"></a>
+                    </div>
+                    <div class="col-md-8 menuCol col-sm-8 col-xs-8">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only"></span>
+                                <i class="fa fa-navicon"></i>
+                            </button>
+                        </div>
+                        <nav id="navbar" class="collapse navbar-collapse">
+                            <ul id="nav">
+                                <li>@Html.ActionLink("Web", "Index", "Home", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ======= 1.03 Domain Area ====== -->
+    @RenderBody()
+    <!-- ======= /1.03 Domain Area ====== -->
+    <div class="sectionBar"></div>
+    <footer class="animated fadeInUp" style="opacity: 1;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 scrollpoint sp-effect3 text-center">
+                    <p>
+                        <ul class="footerLinkIcon">
+                            <li><a href="https://www.linkedin.com/in/leonardopaines" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/leopaines/whois" target="_blank"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </p>
+                    <p>Desenvolvido com muito <span class="fa fa-coffee"></span> por <a href="https://www.leonardo.poa.br" target="_blank">Leonardo Paines</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/projeto")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,18 @@
+@using System.Web.Http
+@using Base.Api.Areas.HelpPage.Models
+@model HelpPageApiModel
+
+@{
+    var description = Model.ApiDescription;
+    ViewBag.Title = String.Format("API '{0}'", description.RelativePath);
+}
+
+<div class="secPdng animated fadeInUp" style="opacity: 1;">
+    <div class="container">
+        <div class="row">
+            <div class="clearfix">
+                @Html.DisplayForModel()
+            </div>
+        </div>
+    </div>
+</div>

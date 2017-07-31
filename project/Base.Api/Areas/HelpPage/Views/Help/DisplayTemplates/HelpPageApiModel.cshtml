@@ -1,0 +1,64 @@
+@using System.Web.Http
+@using System.Web.Http.Description
+@using Base.Api.Areas.HelpPage.Models
+@using Base.Api.Areas.HelpPage.ModelDescriptions
+@model HelpPageApiModel
+
+@{
+    ApiDescription description = Model.ApiDescription;
+}
+<div class="animated fadeInUp" style="opacity: 1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>@description.Documentation</h1>
+                <h2>URI Parameters</h2>
+                <p>
+                    @Html.DisplayFor(m => m.UriParameters, "Parameters")
+                </p>
+
+                @if (Model.RequestModelDescription != null)
+                {
+                    <h3>Body Parameters</h3>
+                    <p>@Model.RequestDocumentation</p>
+                    @Html.DisplayFor(m => m.RequestModelDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.RequestModelDescription })
+                    if (Model.RequestBodyParameters != null)
+                    {
+                        @Html.DisplayFor(m => m.RequestBodyParameters, "Parameters")
+                    }
+                }
+
+                @if (Model.SampleRequests.Count > 0)
+                {
+                    <h3>Request Formats</h3>
+                    @Html.DisplayFor(m => m.SampleRequests, "Samples")
+                }
+
+                <h2>Response Information</h2>
+
+                <h3>Resource Description</h3>
+
+                <p>@description.ResponseDescription.Documentation</p>
+
+                @if (Model.ResourceDescription != null)
+                {
+                    @Html.DisplayFor(m => m.ResourceDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.ResourceDescription })
+                    if (Model.ResourceProperties != null)
+                    {
+                        @Html.DisplayFor(m => m.ResourceProperties, "Parameters")
+                    }
+                }
+                else
+                {
+                    <p>None.</p>
+                }
+
+                @if (Model.SampleResponses.Count > 0)
+                {
+                    <h3>Response Formats</h3>
+                    @Html.DisplayFor(m => m.SampleResponses, "Samples")
+                }
+            </div>
+        </div>
+    </div>
+</div>

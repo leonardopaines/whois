@@ -1,0 +1,33 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using Base.Api.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "API";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+<div class="secPdng animated fadeInUp" style="opacity: 1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sectionTitle">
+                    <div class="h2">Introdução</div>
+                    <p>Documentação para a utilização da API</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="clearfix">
+                @foreach (var group in apiGroups)
+                {
+                    @Html.DisplayFor(m => group, "ApiGroup")
+                }
+            </div>
+        </div>
+    </div>
+</div>
