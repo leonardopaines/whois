@@ -21,7 +21,7 @@ Projeto publicado em [whois.leonardo.poa.br](https://whois.leonardo.poa.br/)
 Executar Script (https://github.com/leopaines/whois/blob/master/project/Base.DataModel/Entities/whois.sql) para a geração da estrutura da base/tables MySQL
 
 ## Definir ConectionString
-Alterar coneção no web.config, localizado em project/Base.Api/Web.config.
+Alterar conexão no web.config, localizado em project/Base.Api/Web.config.
 
  <connectionStrings>
     <add name="MySQLContext" connectionString="server=???;port=???;user id=???;
