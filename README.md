@@ -1,5 +1,7 @@
 ## Desafio WhoIs
 
+Projeto publicado em [whois.leonardo.poa.br](https://whois.leonardo.poa.br/)
+
 ### Tecnologias Utilizadas
 1. API 2 / MVC 5 .NET
 2. Front-end Bootstrap
@@ -13,21 +15,18 @@
 4. Base.Services
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Configurações
+## Base de Dados
+Executar Script (https://github.com/leopaines/whois/blob/master/project/Base.DataModel/Entities/whois.sql) para a geração da estrutura da base/tables MySQL
 
-- Bulleted
-- List
+## Definir ConectionString
+Alterar coneção no web.config, localizado em project/Base.Api/Web.config.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-Executar o [Script](https://guides.github.com/features/mastering-markdown/) para a geração da estrutura da base/tables MySQL
+ <connectionStrings>
+    <add name="MySQLContext" connectionString="server=???;port=???;user id=???;
+    password=???;database=whois;persistsecurityinfo=True"      providerName="MySql.Data.MySqlClient" />
+  </connectionStrings>
 
 
 ```
