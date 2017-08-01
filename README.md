@@ -20,7 +20,7 @@ Projeto publicado em [whois.leonardo.poa.br](https://whois.leonardo.poa.br/)
 MySQL versão 5.6
 
 #### Scripts
-Executar Script (https://github.com/leopaines/whois/blob/master/project/Base.DataModel/Entities/whois.sql) para a geração da estrutura da base/tables MySQL
+Executar Script (https://github.com/leopaines/whois/blob/master/project/Base.DataModel/Entities/whois.sql) para a geração da estrutura base/tables MySQL
 
 #### ConnectionString
 Definir configuração de conexão no web.config, localizado em project/Base.Api/Web.config
