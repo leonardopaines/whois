@@ -16,7 +16,10 @@ Projeto publicado em [whois.leonardo.poa.br](https://whois.leonardo.poa.br/)
 
 ### Configurações
 
-#### Base de Dados
+#### Banco de Dados
+MySQL versão 5.6
+
+#### Scripts
 Executar Script (https://github.com/leopaines/whois/blob/master/project/Base.DataModel/Entities/whois.sql) para a geração da estrutura da base/tables MySQL
 
 #### ConnectionString
